@@ -94,6 +94,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopInit() {
     gyro.calibrate();
+    gyro.reset();
   }
 
   /** This function is called periodically during operator control. */
