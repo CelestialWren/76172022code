@@ -9,8 +9,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.MechanumDrive;
-import edu.wpi.first.wpilibj.AnalogGyro;
+import com.kauailabs.navx.frc;
 import com.com.revrobotics.CANSparkMax;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -38,7 +39,7 @@ public class Robot extends TimedRobot {
     CANSparkMax frontRightMotor = new CANSparkMax(2,brushless);
     CANSparkMax backLeftMotor = new PCANSparkMax(3, brushless);
     CANSparkMax backRightMotor = new CANSparkMax(4, brushless);
-    AnalogGyro gyro = new AnalogGyro();
+    AHRS gyro = new AHRS(SPI.Port.kMXP);
     frontRightMotor.setInverted(true);
     backLeftMotor.setInverted(true);
     MechanumDrive drivebase = new MechanumDrive(frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor);
